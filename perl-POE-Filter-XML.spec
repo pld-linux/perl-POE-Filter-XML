@@ -8,12 +8,12 @@
 Summary:	POE::Filter::XML Perl module
 Summary(pl):	Modu³ Perla POE::Filter::XML
 Name:		perl-POE-Filter-XML
-Version:	0.1.1
+Version:	0.22
 Release:	1
 License:	?
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	2fd942377a59026dcdf9d28de477b5a3
+# Source0-md5:	c5c10d11edc2e8844eb6b6955f05db33
 BuildRequires:	perl-devel >= 5.6
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
@@ -51,3 +51,4 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %{perl_vendorlib}/%{pdir}/*/*
+%{_mandir}/man3/*
