@@ -10,7 +10,7 @@ Summary(pl):	Modu³ Perla POE::Filter::XML
 Name:		perl-POE-Filter-XML
 Version:	0.22
 Release:	1
-License:	?
+License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	c5c10d11edc2e8844eb6b6955f05db33
