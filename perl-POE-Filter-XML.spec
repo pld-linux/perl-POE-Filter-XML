@@ -5,8 +5,8 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	POE
 %define	pnam	Filter-XML
-Summary:	POE::Filter::XML
-#Summary(pl):	
+Summary:	POE::Filter::XML Perl module
+Summary(pl):	Modu³ Perla POE::Filter::XML
 Name:		perl-POE-Filter-XML
 Version:	0.1.1
 Release:	1
@@ -24,10 +24,10 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-POE::Filter::XML
+POE::Filter::XML Perl module.
 
-# %description -l pl
-# TODO
+%description -l pl
+Modu³ Perla POE::Filter::XML.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
