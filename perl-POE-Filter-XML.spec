@@ -3,8 +3,8 @@
 %bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	POE
-%define	pnam	Filter-XML
+%define		pdir	POE
+%define		pnam	Filter-XML
 Summary:	POE::Filter::XML Perl module
 Summary(pl):	Modu³ Perla POE::Filter::XML
 Name:		perl-POE-Filter-XML
