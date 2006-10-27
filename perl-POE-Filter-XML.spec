@@ -19,7 +19,7 @@ BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
 BuildRequires:	perl-Filter-Template
-BuildRequires:	perl-POE >= 0.34_01
+BuildRequires:	perl-POE >= 1:0.3401
 BuildRequires:	perl-PXR
 BuildRequires:	perl-XML-SAX >= 0.14
 BuildRequires:	perl-XML-SAX-Expat
