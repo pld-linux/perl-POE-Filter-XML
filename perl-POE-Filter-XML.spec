@@ -6,7 +6,7 @@
 %define		pdir	POE
 %define		pnam	Filter-XML
 Summary:	POE::Filter::XML Perl module
-Summary(pl.UTF-8):   Moduł Perla POE::Filter::XML
+Summary(pl.UTF-8):	Moduł Perla POE::Filter::XML
 Name:		perl-POE-Filter-XML
 Version:	0.29
 Release:	2
