@@ -5,16 +5,18 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	POE
 %define		pnam	Filter-XML
-Summary:	POE::Filter::XML Perl module
-Summary(pl.UTF-8):	Moduł Perla POE::Filter::XML
+Summary:	POE::Filter::XML - a POE Filter for parsing XML
+Summary(pl.UTF-8):	POE::Filter::XML - filtr POE do analizy XML-a
 Name:		perl-POE-Filter-XML
 Version:	0.29
 Release:	2
 License:	GPL
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/POE/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	480eba1947f05e9cdf504dfd25117869
+URL:		http://search.cpan.org/dist/POE-Filter-XML/
 BuildRequires:	perl-ExtUtils-AutoInstall >= 0.32
+BuildRequires:	perl-Module-Build
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
@@ -28,31 +30,42 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-POE::Filter::XML Perl module.
+POE::Filter::XML provides POE with a completely encapsulated XML
+parsing strategy for POE::Wheels that will be dealing with XML
+streams.
+
+POE::Filter::XML relies upon XML::SAX and XML::SAX::ParserFactory to
+acquire a parser for parsing XML.
 
 %description -l pl.UTF-8
-Moduł Perla POE::Filter::XML.
+POE::Filter::XML udostępnia POE z całkowicie obudowaną strategią
+analizy XML-a dla POE::Wheels, obsługującą strumienie XML.
+
+POE::Filter::XML polega na modułach XML::SAX i XML::SAX::ParserFactory
+w celu uzyskania analizatora XML-a.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-%{__perl} Makefile.PL \
-	INSTALLDIRS=vendor destdir=$RPM_BUILD_ROOT
-%{__make}
+%{__perl} Build.PL \
+	destdir=$RPM_BUILD_ROOT \
+	installdirs=vendor
+./Build
 
-%{?with_tests:%{__make} test}
+%{?with_tests:./Build test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+./Build install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%{perl_vendorlib}/%{pdir}/*/*
+%doc ChangeLog
+%{perl_vendorlib}/POE/Filter/XML.pm
+%{perl_vendorlib}/POE/Filter/XML
 %{_mandir}/man3/*
