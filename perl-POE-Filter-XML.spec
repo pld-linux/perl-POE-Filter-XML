@@ -8,7 +8,7 @@ Summary:	POE::Filter::XML - a POE Filter for parsing XML
 Summary(pl.UTF-8):	POE::Filter::XML - filtr POE do analizy XML-a
 Name:		perl-POE-Filter-XML
 Version:	0.38
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/POE/%{pdir}-%{pnam}-%{version}.tar.gz
